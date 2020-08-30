@@ -3,12 +3,13 @@ import { View, StyleSheet, Image, TouchableHighlight } from "react-native";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import Apptext from "../components/AppText";
 import colors from "../config/color";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export default function Listitemcom({
   title,
   subtitle,
   image,
-  ImageComponent,
+  IconComponent,
   renderRightActions,
 }) {
   return (
@@ -18,7 +19,7 @@ export default function Listitemcom({
         onPress={() => console.log}
       >
         <View style={styles.container}>
-          {ImageComponent}
+          {IconComponent}
 
           {image && <Image style={styles.image} source={image} />}
 
@@ -45,6 +46,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
 
     padding: 15,
+    backgroundColor: colors.white,
   },
   title: {
     fontWeight: "600",
@@ -56,4 +58,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// this is the reusable item component we gnna reuse it in a multiple placesm
+// this is the reusable item component we gonna reuse it in a multiple places
