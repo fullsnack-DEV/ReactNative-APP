@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import AppTextinput from "../components/AppTextinput";
-import Errormessage from "../components/Errormessage";
+
+import AppTextinput from "./AppTextinput";
+import Errormessage from "./Errormessage";
 import { useFormikContext } from "formik";
 export default function Appformfieldcompnent({ name, ...otherprops }) {
   const { setFieldTouched, handleChange, errors, touched } = useFormikContext();
@@ -16,5 +16,3 @@ export default function Appformfieldcompnent({ name, ...otherprops }) {
     </>
   );
 }
-
-const styles = StyleSheet.create({});

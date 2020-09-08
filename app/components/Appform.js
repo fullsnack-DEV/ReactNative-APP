@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+
 import { Formik } from "formik";
 
 export default function Appform({
@@ -18,5 +18,3 @@ export default function Appform({
     </Formik>
   );
 }
-
-const styles = StyleSheet.create({});
