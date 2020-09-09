@@ -24,9 +24,15 @@ export default function Listitemcom({
           {image && <Image style={styles.image} source={image} />}
 
           <View style={styles.usercontainer}>
-            <Apptext style={styles.title}>{title}</Apptext>
+            <Apptext style={styles.title} numberOfLine={1}>
+              {title}
+            </Apptext>
 
-            {subtitle && <Apptext style={styles.subtitle}>{subtitle}</Apptext>}
+            {subtitle && (
+              <Apptext style={styles.subtitle} numberOfLine={2}>
+                {subtitle}
+              </Apptext>
+            )}
           </View>
         </View>
       </TouchableHighlight>

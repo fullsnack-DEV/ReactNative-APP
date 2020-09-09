@@ -20,6 +20,9 @@ export default function Apppicker({
   items,
   onSelectItem,
   selectedItem,
+
+  PickerItemComponent = Pickeritem,
+  numberOfColumns = 1,
   placeholder,
   ...otherProps
 }) {
@@ -50,9 +53,11 @@ export default function Apppicker({
         <Button title="Close" onPress={() => setModalVisible(false)} />
         <FlatList
           data={items}
+          numColumns={numberOfColumns}
           keyExtractor={(item) => item.value.toString()}
           renderItem={({ item }) => (
-            <Pickeritem
+            <PickerItemComponent
+              item={item}
               label={item.label}
               onPress={() => {
                 setModalVisible(false);
