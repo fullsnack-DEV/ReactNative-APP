@@ -40,7 +40,7 @@ const intialMessages = [
 
 export default function Messagescreen() {
   const [messages, setMessages] = useState(intialMessages);
-  const [refreshing, setRefreshing] = useState(false);
+  const [refreshing, setRefreshing] = useState(false); //hooks function
 
   const handleDelete = (message) => {
     setMessages(messages.filter((m) => m.id !== message.id));
@@ -84,3 +84,4 @@ const styles = StyleSheet.create({});
 
 //Flatlist will take a 3 props in. 1> Data , 2> keyextractor , 3> renderitem
 //always try to build a resuable component like reusaable icon component , reusable text component etc
+// hooks function will add some extra functionlity to the existing component

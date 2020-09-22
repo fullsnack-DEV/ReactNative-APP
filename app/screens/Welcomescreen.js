@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, ImageBackground, StyleSheet, Image } from "react-native";
-//Cutsom component
+//Cutsom component to use
 import Appbutton from "../components/Appbutton";
 
-export default function Welcomescreen() {
+export default function Welcomescreen({ navigation }) {
   return (
     <ImageBackground
       blurRadius={1}
@@ -19,9 +19,13 @@ export default function Welcomescreen() {
         <Text style={styles.heading}>Sell What We Don't Need</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <Appbutton title="Login" />
+        <Appbutton title="Login" onPress={() => navigation.navigate("Login")} />
 
-        <Appbutton title="Sign-up" color="secondary" />
+        <Appbutton
+          title="Sign-up"
+          color="secondary"
+          onPress={() => navigation.navigate("Sign-up")}
+        />
       </View>
     </ImageBackground>
   );

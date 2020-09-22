@@ -3,16 +3,14 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import AppText from "../components/AppText";
 import colors from "../config/color";
 import Listitem from "../components/Listitemcom";
-export default function Listingdetailsscreen() {
+export default function Listingdetailsscreen({ route }) {
+  const listing = route.params;
   return (
     <View>
-      <Image
-        style={styles.image}
-        source={require("../../assets/splashchair.jpg.jpg")}
-      />
+      <Image style={styles.image} source={listing.image} />
       <View style={styles.detailcontainer}>
-        <AppText style={styles.title}> Yello chair For Sell </AppText>
-        <AppText style={styles.price}> 105$ </AppText>
+        <AppText style={styles.title}> {listing.title} </AppText>
+        <AppText style={styles.price}> {listing.price} </AppText>
         <View style={styles.itemwrapper}>
           <Listitem
             image={require("../../assets/user.jpg")}

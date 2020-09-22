@@ -3,18 +3,21 @@ import { StyleSheet, Image, Text, View } from "react-native";
 //import
 import colors from "../config/color";
 import Apptext from "../components/AppText";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
-function Cardcom({ image, title, subtitle }) {
+function Cardcom({ image, title, subtitle, onPress }) {
   return (
-    <View style={styles.card}>
-      <Image style={styles.image} source={image} />
+    <TouchableWithoutFeedback onPress={onPress}>
+      <View style={styles.card}>
+        <Image style={styles.image} source={image} />
 
-      <View style={styles.detailContainer}>
-        <Apptext style={styles.title}>{title}</Apptext>
+        <View style={styles.detailContainer}>
+          <Apptext style={styles.title}>{title}</Apptext>
 
-        <Apptext style={styles.subtitle}>{subtitle}</Apptext>
+          <Apptext style={styles.subtitle}>{subtitle}</Apptext>
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 }
 

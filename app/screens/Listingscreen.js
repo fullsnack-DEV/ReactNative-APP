@@ -31,27 +31,31 @@ const listings = [
   },
 ];
 
-export default function Listingscreen() {
+export default function Listingscreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
-      <FlatList
-        data={listings}
-        keyExtractor={(listing) => listing.id.toString()}
-        renderItem={({ item }) => (
-          <Cardcom
-            title={item.title}
-            subtitle={"INR" + item.price}
-            image={item.image}
-          />
-        )}
-      />
+      <View styte={styles.container}>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={listings}
+          keyExtractor={(listing) => listing.id.toString()}
+          renderItem={({ item }) => (
+            <Cardcom
+              title={item.title}
+              subtitle={"INR" + item.price}
+              image={item.image}
+              onPress={() => navigation.navigate("Listingdetais", item)}
+            />
+          )}
+        />
+      </View>
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 5,
+    padding: 10,
     backgroundColor: Colors.lightgrey,
   },
 });
